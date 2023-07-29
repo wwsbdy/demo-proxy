@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.zj.demoproxy.utils.ClassHelper
+com.zj.demoproxy.utils.ClassHelper,\
+com.zj.demoproxy.template.handler.SingerInvocationHandler

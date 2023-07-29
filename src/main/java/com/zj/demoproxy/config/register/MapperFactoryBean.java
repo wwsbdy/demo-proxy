@@ -23,6 +23,8 @@ public class MapperFactoryBean<T extends BaseTemplate> implements FactoryBean<T>
     private Class<T> mapperInterface;
     @Autowired
     private ClassHelper classHelper;
+    @Autowired
+    private SingerInvocationHandler singerInvocationHandler;
 
     MapperFactoryBean(Class<T> mapperInterface) {
         this.mapperInterface = mapperInterface;
@@ -59,7 +61,7 @@ public class MapperFactoryBean<T extends BaseTemplate> implements FactoryBean<T>
                     .intercept(MethodDelegation.to(new BaseTemplateImpl()))
                     // 自定义方法用自定义拦截
                     .method(ElementMatchers.isDeclaredBy(clazz))
-                    .intercept(InvocationHandlerAdapter.of(new SingerInvocationHandler()))
+                    .intercept(InvocationHandlerAdapter.of(singerInvocationHandler))
                     .make()
                     .load(ClassLoader.getSystemClassLoader())
                     .getLoaded()
