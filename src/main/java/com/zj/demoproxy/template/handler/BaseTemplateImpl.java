@@ -3,7 +3,7 @@ package com.zj.demoproxy.template.handler;
 import com.alibaba.fastjson.JSONObject;
 import com.zj.demoproxy.template.BaseTemplate;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
-import net.bytebuddy.implementation.bind.annotation.Super;
+import net.bytebuddy.implementation.bind.annotation.This;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class BaseTemplateImpl {
     }
 
     @RuntimeType
-    public <T> T toObject(String jsonStr, @Super BaseTemplate<T> baseCustom) {
+    public <T> T toObject(String jsonStr, @This BaseTemplate<T> baseCustom) {
         return JSONObject.parseObject(jsonStr, baseCustom.getTypeClz());
     }
 }
