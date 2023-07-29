@@ -37,7 +37,7 @@ public class SingerInvocationHandler implements InvocationHandler {
                 return func.apply(args, annotation, method.getReturnType());
             }
         }
-        return null;
+        throw new RuntimeException("未知方法");
     }
 
 }
