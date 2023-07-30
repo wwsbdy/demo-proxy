@@ -2,6 +2,10 @@ package com.zj.demoproxy.config;
 
 import com.zj.demoproxy.annotation.Concat;
 import com.zj.demoproxy.pojo.AnnotationBeanMap;
+import com.zj.demoproxy.pojo.StrategyBeanMap;
+import com.zj.demoproxy.service.BaseInterface;
+import com.zj.demoproxy.service.impl.BaseInterfaceImpl;
+import com.zj.demoproxy.template.handler.BaseTemplateImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,5 +32,13 @@ public class CustomConfig {
             return stringBuilder.toString();
         }));
         return annotationBean;
+    }
+
+    @Bean
+    public StrategyBeanMap strategyBeanMap(BaseTemplateImpl baseTemplateImpl, BaseInterfaceImpl baseInterface){
+        StrategyBeanMap strategyBeanMap = new StrategyBeanMap(baseTemplateImpl);
+        // 添加自定义父级接口
+        strategyBeanMap.put(BaseInterface.class, baseInterface);
+        return strategyBeanMap;
     }
 }

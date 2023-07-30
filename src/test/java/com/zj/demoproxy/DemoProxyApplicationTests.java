@@ -1,6 +1,7 @@
 package com.zj.demoproxy;
 
 import com.zj.demoproxy.model.DmsTestDo;
+import com.zj.demoproxy.service.CkTestService;
 import com.zj.demoproxy.service.DmsTestService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,9 @@ public class DemoProxyApplicationTests {
     @Autowired
     private DmsTestService dmsTestService;
 
+    @Autowired
+    private CkTestService ckTestService;
+
     @Test
     public void beanTest() {
         String dmsUrl = dmsTestService.getDmsUrl();
@@ -37,6 +41,12 @@ public class DemoProxyApplicationTests {
         dmsTestService.soutSome();
         System.out.println(dmsTestService.concat("aa", "bb"));
         System.out.println(dmsTestService.sub(4, 3, new BigDecimal(1.5)));
+    }
+
+    @Test
+    public void customInterface() {
+        Class<String> typeClz = ckTestService.getTypeClz();
+        System.out.println(ckTestService.getValue());
     }
 
 }

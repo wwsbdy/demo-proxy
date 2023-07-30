@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.zj.demoproxy.template.BaseTemplate;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
 import net.bytebuddy.implementation.bind.annotation.This;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.function.Supplier;
 /**
  * @author 19242
  */
+@Component
 public class BaseTemplateImpl {
 
     @RuntimeType
