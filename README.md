@@ -89,10 +89,7 @@ public class DemoProxyApplicationTests {
 
 ### 支持自定义方法和自定义方法注解
 
-系统自带的注解方法有：
-    -Scan
-    -Sout
-    -Sub
+系统自带的注解方法有： @Sout @Sub
 
 在接口层的方法上加上这些注解
 
