@@ -40,7 +40,7 @@ public class MapperFactoryBean<T extends BaseTemplate> implements FactoryBean<T>
             DynamicType.Builder.MethodDefinition.ReceiverTypeDefinition<Object> receiverTypeDefinition = new ByteBuddy().with(new NamingStrategy.AbstractBase() {
                         @Override
                         protected String name(TypeDescription typeDescription) {
-                            return "com.zj.demoproxy.template.service.impl." + typeDescription.getSimpleName() + "Impl";
+                            return "com.zj.demoproxy.template.service.impl." + clazz.getSimpleName() + "Impl";
                         }
                     })
                     .subclass(Object.class)
