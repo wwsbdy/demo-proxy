@@ -1,5 +1,6 @@
 package com.zj.demoproxy.config;
 
+import com.zj.demoproxy.pojo.AnnotationBeanMap;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +14,7 @@ public class AnnotationBeanConfig {
 
     @Bean
     @ConditionalOnMissingBean
-    public AnnotationBean annotationBean() {
-        AnnotationBean annotationBean = new AnnotationBean();
-        return annotationBean;
+    public AnnotationBeanMap annotationBean() {
+        return new AnnotationBeanMap();
     }
 }

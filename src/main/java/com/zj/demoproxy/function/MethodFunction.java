@@ -5,7 +5,7 @@ package com.zj.demoproxy.function;
  * @author 19242
  */
 @FunctionalInterface
-public interface Function<T, U> {
+public interface MethodFunction<T, U> {
     /**
      * 函数式接口
      * @param t 入参

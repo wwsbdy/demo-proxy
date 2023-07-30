@@ -2,7 +2,7 @@ package com.zj.demoproxy.enums;
 
 import com.zj.demoproxy.annotation.Sout;
 import com.zj.demoproxy.annotation.Sub;
-import com.zj.demoproxy.function.Function;
+import com.zj.demoproxy.function.MethodFunction;
 import com.zj.demoproxy.utils.DecimalUtil;
 
 import java.lang.annotation.Annotation;
@@ -44,9 +44,9 @@ public enum CustomAnnotationEnum {
 
     private final Class<? extends Annotation> annotation;
 
-    private final Function<Object[], Annotation> func;
+    private final MethodFunction<Object[], Annotation> func;
 
-    CustomAnnotationEnum(Class<? extends Annotation> annotation, Function<Object[], Annotation> func) {
+    CustomAnnotationEnum(Class<? extends Annotation> annotation, MethodFunction<Object[], Annotation> func) {
         this.annotation = annotation;
         this.func = func;
     }
@@ -55,7 +55,7 @@ public enum CustomAnnotationEnum {
      * 赋值基本注解方法
      * @param funcMap
      */
-    public static void setValue(Map<Class<? extends Annotation>, Function<Object[], Annotation>> funcMap){
+    public static void setValue(Map<Class<? extends Annotation>, MethodFunction<Object[], Annotation>> funcMap){
         for (CustomAnnotationEnum anEnum : CustomAnnotationEnum.values()) {
             funcMap.put(anEnum.annotation, anEnum.func);
         }

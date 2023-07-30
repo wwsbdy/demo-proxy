@@ -1,7 +1,7 @@
 package com.zj.demoproxy.template.handler;
 
-import com.zj.demoproxy.config.AnnotationBean;
-import com.zj.demoproxy.function.Function;
+import com.zj.demoproxy.pojo.AnnotationBeanMap;
+import com.zj.demoproxy.function.MethodFunction;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
@@ -15,9 +15,9 @@ import java.util.Objects;
 @Component
 public class SingerInvocationHandler implements InvocationHandler {
 
-    private final AnnotationBean annotationBean;
+    private final AnnotationBeanMap annotationBean;
 
-    public SingerInvocationHandler(AnnotationBean annotationBean) {
+    public SingerInvocationHandler(AnnotationBeanMap annotationBean) {
         this.annotationBean = annotationBean;
     }
 
@@ -32,7 +32,7 @@ public class SingerInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Annotation[] annotations = method.getDeclaredAnnotations();
         for (Annotation annotation : annotations) {
-            Function<Object[], Annotation> func = annotationBean.getFuncMap().get(annotation.annotationType());
+            MethodFunction<Object[], Annotation> func = annotationBean.get(annotation.annotationType());
             if (Objects.nonNull(func)){
                 return func.apply(args, annotation, method.getReturnType());
             }

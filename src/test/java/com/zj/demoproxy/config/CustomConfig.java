@@ -1,6 +1,7 @@
 package com.zj.demoproxy.config;
 
 import com.zj.demoproxy.annotation.Concat;
+import com.zj.demoproxy.pojo.AnnotationBeanMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,9 +15,9 @@ public class CustomConfig {
      * @return
      */
     @Bean
-    AnnotationBean annotationBean(){
-        AnnotationBean annotationBean = new AnnotationBean();
-        annotationBean.getFuncMap().put(Concat.class, ((objects, annotation, clz) -> {
+    AnnotationBeanMap annotationBean(){
+        AnnotationBeanMap annotationBean = new AnnotationBeanMap();
+        annotationBean.put(Concat.class, ((objects, annotation, clz) -> {
             if (String.class != clz){
                 throw new  RuntimeException("@Concat修饰的方法返回值必须是String类型");
             }
