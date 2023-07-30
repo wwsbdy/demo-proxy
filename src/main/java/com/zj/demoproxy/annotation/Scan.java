@@ -13,5 +13,5 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 public @interface Scan {
 
-    String value();
+    String value() default "";
 }
