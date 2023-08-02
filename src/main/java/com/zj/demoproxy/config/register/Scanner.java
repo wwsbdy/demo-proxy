@@ -1,6 +1,5 @@
 package com.zj.demoproxy.config.register;
 
-import com.zj.demoproxy.template.BaseTemplate;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
@@ -12,7 +11,6 @@ import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -43,27 +41,7 @@ public class Scanner extends ClassPathBeanDefinitionScanner {
     @Override
     protected boolean isCandidateComponent(AnnotatedBeanDefinition beanDefinition) {
         AnnotationMetadata metadata = beanDefinition.getMetadata();
-        return metadata.isInterface() && metadata.isIndependent() && extendsBase(metadata.getInterfaceNames());
-    }
-
-    /**
-     * 检测接口必须继承BaseTemplate
-     *
-     * @param interfaceNames
-     * @return
-     */
-    private boolean extendsBase(String[] interfaceNames) {
-        if (Objects.isNull(interfaceNames) || interfaceNames.length == 0) {
-            return false;
-        }
-        // 拿到BaseTemplate包路径
-        String baseTemplatePackage = BaseTemplate.class.getName();
-        for (String interfaceName : interfaceNames) {
-            if (baseTemplatePackage.equals(interfaceName)) {
-                return true;
-            }
-        }
-        return false;
+        return metadata.isInterface() && metadata.isIndependent();
     }
 
     @Override

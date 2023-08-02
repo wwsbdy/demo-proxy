@@ -3,6 +3,7 @@ package com.zj.demoproxy;
 import com.zj.demoproxy.model.DmsTestDo;
 import com.zj.demoproxy.service.CkTestService;
 import com.zj.demoproxy.service.DmsTestService;
+import com.zj.demoproxy.service.SimpleService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class DemoProxyApplicationTests {
 
     @Autowired
     private CkTestService ckTestService;
+
+    @Autowired
+    private SimpleService simpleService;
 
     @Test
     public void beanTest() {
@@ -47,6 +51,11 @@ public class DemoProxyApplicationTests {
     public void customInterface() {
         Class<String> typeClz = ckTestService.getTypeClz();
         System.out.println(ckTestService.getValue());
+    }
+
+    @Test
+    public void simpleServiceTest() {
+        System.out.println(simpleService.subs(1, 2, 3));
     }
 
 }
