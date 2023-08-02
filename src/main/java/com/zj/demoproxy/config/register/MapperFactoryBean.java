@@ -5,6 +5,10 @@ import com.zj.demoproxy.interfaces.BeanCreateRule;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * 生产bean对象
+ * @param <T>
+ */
 public class MapperFactoryBean<T> implements FactoryBean<T> {
 
     private Class<T> mapperInterface;

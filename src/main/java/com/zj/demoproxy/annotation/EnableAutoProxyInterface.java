@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import java.lang.annotation.*;
 
 /**
- * 允许自动代理继承BaseTemplate的接口
+ * 开启自动代理接口功能，用在启动类上
  *
  * @author arthur_zhou
  */

@@ -3,7 +3,7 @@ package com.zj.demoproxy.annotation;
 import java.lang.annotation.*;
 
 /**
- * 允许代理接口类
+ * 允许扫描接口进行代理
  *
  * @author 19242
  */

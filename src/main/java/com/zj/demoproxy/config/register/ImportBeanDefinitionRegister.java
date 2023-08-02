@@ -15,6 +15,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
+ * bean注册器
  * @author 19242
  */
 public class ImportBeanDefinitionRegister implements BeanFactoryAware, ImportBeanDefinitionRegistrar {

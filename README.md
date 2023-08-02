@@ -180,10 +180,8 @@ public class CustomConfig {
 }
 ```
 
+## v2.0.0 
 
-# 5. 后续迭代方向
-
-## 1.可代理自定义的方法
-
-## 2.可通过@Configuration灵活配置代理类
-
+### 代理规则可自定义
+如CustomConfig的beanCreateRule方法，只要是加了@Scan的接口就可以代理。
+只提供基本的代理，大部分需要自己配置规则

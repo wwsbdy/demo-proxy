@@ -14,6 +14,8 @@ import java.lang.annotation.Annotation;
 import java.util.Set;
 
 /**
+ * 扫描器
+ *
  * @author 19242
  */
 public class Scanner extends ClassPathBeanDefinitionScanner {

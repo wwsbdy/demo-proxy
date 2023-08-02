@@ -12,6 +12,9 @@ import org.springframework.context.ApplicationContextAware;
 
 import java.lang.annotation.Annotation;
 
+/**
+ * 扫描配置
+ */
 public class MapperScannerConfigurer implements BeanDefinitionRegistryPostProcessor, InitializingBean, ApplicationContextAware, BeanNameAware {
 
     private String beanName;
@@ -22,7 +25,6 @@ public class MapperScannerConfigurer implements BeanDefinitionRegistryPostProces
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        // TODO Auto-generated method stub
 
     }
 
@@ -46,7 +48,6 @@ public class MapperScannerConfigurer implements BeanDefinitionRegistryPostProces
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        // TODO Auto-generated method stub
 
     }
 

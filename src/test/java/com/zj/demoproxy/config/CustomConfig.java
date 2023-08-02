@@ -50,7 +50,8 @@ public class CustomConfig {
     }
 
     @Bean
-    public BeanCreateRule beanCreateRule(ClassHelper classHelper, SingerInvocationHandler singerInvocationHandler, BaseTemplateImpl baseTemplateImpl, BaseInterfaceImpl baseInterface){
+    public BeanCreateRule beanCreateRule(ClassHelper classHelper, SingerInvocationHandler singerInvocationHandler,
+                                         BaseTemplateImpl baseTemplateImpl, BaseInterfaceImpl baseInterface){
         return new BeanCreateRule() {
             @Override
             public <T> T create(Class<T> clazz) {
