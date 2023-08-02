@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.zj.demoproxy</groupId>
     <artifactId>demo-proxy</artifactId>
-    <version>1.1.0</version>
+    <version>2.0.0</version>
     <name>demo-proxy</name>
     <description>demo-proxy</description>
     <properties>
