@@ -183,5 +183,6 @@ public class CustomConfig {
 ## v2.0.0 
 
 ### 代理规则可自定义
+
 如CustomConfig的beanCreateRule方法，只要是加了@Scan的接口就可以代理。
-只提供基本的代理，大部分需要自己配置规则
+接口不用继承再BaseTemplate，只提供基本的代理，大部分需要自己配置规则
