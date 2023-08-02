@@ -1,4 +1,2 @@
-com.zj.demoproxy.utils.ClassHelper
 com.zj.demoproxy.template.handler.SingerInvocationHandler
 com.zj.demoproxy.config.ProxyBeanConfig
-com.zj.demoproxy.template.handler.BaseTemplateImpl
