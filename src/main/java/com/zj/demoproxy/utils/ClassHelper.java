@@ -37,7 +37,7 @@ public class ClassHelper {
             }
 
         }
-        return null;
+        return Object.class;
     }
 
     /**
