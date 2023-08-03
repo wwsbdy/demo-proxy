@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.zj.demoproxy</groupId>
-    <artifactId>demo-proxy</artifactId>
+    <groupId>com.zj.interfaceproxy</groupId>
+    <artifactId>interface-proxy</artifactId>
     <version>2.0.0</version>
-    <name>demo-proxy</name>
+    <name>interface-proxy</name>
 
     <dependencies>
         <dependency>
