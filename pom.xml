@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.zj.interfaceproxy</groupId>
+    <groupId>com.zj</groupId>
     <artifactId>interface-proxy</artifactId>
     <version>2.0.0</version>
     <name>interface-proxy</name>
