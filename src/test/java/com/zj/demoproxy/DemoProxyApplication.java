@@ -1,6 +1,6 @@
 package com.zj.demoproxy;
 
-import com.zj.demoproxy.annotation.EnableAutoProxyInterface;
+import com.zj.baseproxy.annotation.EnableAutoProxyInterface;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

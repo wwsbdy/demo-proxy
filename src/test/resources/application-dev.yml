@@ -7,3 +7,7 @@ dms:
   uris:
     - http://localhost:9203
     - http://localhost:9205
+
+my-test:
+  url: http://116.62.8.175/qxbproxy/get_info_list
+  from: dgg

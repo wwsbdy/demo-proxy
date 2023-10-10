@@ -1,20 +1,16 @@
-package com.zj.demoproxy.model;
+package com.zj.dmsproxy.entity;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 /**
- * @author 19242
+ * @author arthur_zhou
+ * @date 2023/10/8 11:33
  */
 @Data
 public class DmsTestDo {
 
-    private String id;
+    private String eid;
 
     private String name;
 
-    private Long age;
-
-    private BigDecimal score;
 }
